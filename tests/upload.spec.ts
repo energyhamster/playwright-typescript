@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-// @ts-ignore
 import CartPage from "../pages/cart.page.ts";
 import path from "path";
 

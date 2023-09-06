@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-// @ts-ignore
 import AccountPage from "../pages/account.page.ts";
 
 let accountPage: AccountPage;

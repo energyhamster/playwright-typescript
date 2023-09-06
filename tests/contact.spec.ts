@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-// @ts-ignore
 import ContactPage from "./../pages/contact.page.ts";
 import { faker } from "@faker-js/faker";
 
