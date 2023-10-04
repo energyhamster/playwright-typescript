@@ -11,7 +11,9 @@ test.beforeEach(async ({ page }) => {
 test.describe("Verify Blog Tab", () => {
     test("Verify Recent Post count and verify the length of each list item", async ({
         page,
-    }) => {
+    }, testInfo) => {
+        testInfo.annotations.push({ type: "test_id", description: "C2210" });
+
         for (const el of await blogPage.recentPostList.elementHandles()) {
             expect((await el.textContent())?.trim().length).toBeGreaterThan(10);
         }

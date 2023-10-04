@@ -5,9 +5,16 @@ import { defineConfig, devices } from "@playwright/test";
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
+const testRailOptions = {
+    // Whether to add <properties> with all annotations; default is false
+    embedAnnotationsAsProperties: true,
+    // Where to put the report.
+    outputFile: "./test-results/junit-report.xml",
+};
 
 /**
- * See https://playwright.dev/docs/test-configuration.
+ * @See https://playwright.dev/docs/test-configuration.
+ * @type {import('@playwright/test').PlaywrightTestConfig}
  */
 export default defineConfig({
     testDir: "./tests",
@@ -20,7 +27,12 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: [["allure-playwright"], ["line"]],
+    reporter: [
+        ["list"],
+        ["html", { outputFolder: "test-results", open: "never" }],
+        ["junit", testRailOptions],
+    ],
+    outputDir: "test-results/",
     globalSetup: require.resolve("./utils/global-setup.ts"),
     /* Shared settings for all the project
     s below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -43,15 +55,15 @@ export default defineConfig({
             },
         },
 
-        {
-            name: "firefox",
-            use: { ...devices["Desktop Firefox"] },
-        },
+        // {
+        //     name: "firefox",
+        //     use: { ...devices["Desktop Firefox"] },
+        // },
 
-        {
-            name: "webkit",
-            use: { ...devices["Desktop Safari"] },
-        },
+        // {
+        //     name: "webkit",
+        //     use: { ...devices["Desktop Safari"] },
+        // },
 
         /* Test against mobile viewports. */
         // {

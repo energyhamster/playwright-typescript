@@ -1,5 +1,4 @@
 import { Page } from "@playwright/test";
-// @ts-ignore
 import UploadComponent from "../pages/component/upload.component.ts";
 
 class CartPage {
