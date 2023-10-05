@@ -3,7 +3,7 @@ import ContactPage from "../pages/contact.page.ts";
 
 let contactPage: ContactPage;
 let fakerApi: APIRequestContext;
-let randomPerson: APIResponse;
+let person: APIResponse;
 
 test.beforeAll(async ({ playwright }) => {
     fakerApi = await playwright.request.newContext({
@@ -12,7 +12,7 @@ test.beforeAll(async ({ playwright }) => {
 
     const response = await fakerApi.get("users");
     const responseBody = await response.json();
-    randomPerson = responseBody[0];
+    person = responseBody[0];
 });
 
 test.beforeEach(async ({ page }) => {
@@ -23,10 +23,10 @@ test.beforeEach(async ({ page }) => {
 test.describe("Verify Contact Tab", () => {
     test("Verify Send Us Message form Submit", async ({ page }) => {
         await contactPage.fillAllContactFieldsInFormAndSubmit(
-            randomPerson["name"],
-            randomPerson["email"],
-            randomPerson["phone"],
-            randomPerson["website"]
+            person["name"],
+            person["email"],
+            person["phone"],
+            person["website"]
         );
 
         expect((await contactPage.successMessage.innerText()).trim()).toEqual(
