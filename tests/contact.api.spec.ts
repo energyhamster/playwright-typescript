@@ -1,4 +1,4 @@
-import { test, expect, APIRequestContext, APIResponse } from "@playwright/test";
+import { test, expect, APIResponse } from "@playwright/test";
 import ContactPage from "../pages/contact.page.ts";
 import APIController from "../controller/api.controller.ts";
 
