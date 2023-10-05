@@ -13,7 +13,7 @@ test.describe("Verify upload File", () => {
     const fileName = ["logo-social.png", "test.pdf"];
 
     for (const name of fileName) {
-        test(`should upload a ${name} file`, async () => {
+        test(`should upload a ${name} file`, async ({ page }) => {
             const filePath = path.join(__dirname, `../data/${name}`);
 
             cartPage.uploadComponent().uploadFile(filePath);
