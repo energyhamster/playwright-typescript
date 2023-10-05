@@ -29,7 +29,7 @@ export default defineConfig({
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
     reporter: [
         ["list"],
-        ["html", { outputFolder: "test-results", open: "never" }],
+        ["html", { outputFolder: "test-html-report-results", open: "never" }],
         ["junit", testRailOptions],
     ],
     outputDir: "test-results/",
