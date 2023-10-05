@@ -2,9 +2,9 @@ import { Page, Locator } from "@playwright/test";
 
 class UploadComponent {
     private page: Page;
-    uploadInput: string;
-    submitBtn: Locator;
-    successTxt: Locator;
+    readonly uploadInput: string;
+    readonly submitBtn: Locator;
+    readonly successTxt: Locator;
 
     constructor(page: Page) {
         this.page = page;

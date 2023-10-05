@@ -2,11 +2,11 @@ import { Page, Locator } from "@playwright/test";
 
 class HomePage {
     private page: Page;
-    getStartedBtn: Locator;
-    headingText: Locator;
-    homeText: Locator;
-    searchIcon: Locator;
-    navLinks: Locator;
+    readonly getStartedBtn: Locator;
+    readonly headingText: Locator;
+    readonly homeText: Locator;
+    readonly searchIcon: Locator;
+    readonly navLinks: Locator;
 
     constructor(page: Page) {
         this.page = page;

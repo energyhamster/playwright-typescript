@@ -5,7 +5,7 @@ import APIController from "../controller/api.controller.ts";
 let contactPage: ContactPage;
 let person: APIResponse;
 
-test.beforeAll(async ({ playwright }) => {
+test.beforeAll(async () => {
     await APIController.init();
     person = await APIController.getUser();
 });
@@ -16,7 +16,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Verify Contact Tab", () => {
-    test("Verify Send Us Message form Submit", async ({ page }) => {
+    test("Verify Send Us Message form Submit", async () => {
         await contactPage.fillAllContactFieldsInFormAndSubmit(
             person["name"],
             person["email"],

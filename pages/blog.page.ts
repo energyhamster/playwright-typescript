@@ -2,7 +2,7 @@ import { Locator, Page } from "@playwright/test";
 
 class BlogPage {
     private page: Page;
-    recentPostList: Locator;
+    readonly recentPostList: Locator;
 
     constructor(page: Page) {
         this.page = page;

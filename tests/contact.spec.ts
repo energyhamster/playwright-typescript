@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Verify Contact Tab", () => {
-    test("Verify Send Us Message form Submit", async ({ page }) => {
+    test("Verify Send Us Message form Submit", async () => {
         await contactPage.fillAllContactFieldsInFormAndSubmit(
             faker.person.fullName(),
             faker.internet.email(),

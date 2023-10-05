@@ -2,13 +2,13 @@ import { Locator, Page } from "@playwright/test";
 
 class ContactPage {
     private page: Page;
-    recentPostList: Locator;
-    nameField: Locator;
-    emailField: Locator;
-    phoneField: Locator;
-    messageField: Locator;
-    submitButton: Locator;
-    successMessage: Locator;
+    readonly recentPostList: Locator;
+    readonly nameField: Locator;
+    readonly emailField: Locator;
+    readonly phoneField: Locator;
+    readonly messageField: Locator;
+    readonly submitButton: Locator;
+    readonly successMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;

@@ -2,10 +2,10 @@ import { Page, Locator } from "@playwright/test";
 
 class AccountPage {
     private page: Page;
-    loginForm: Locator;
-    registerForm: Locator;
-    ordersTab: Locator;
-    downloadsTab: Locator;
+    readonly loginForm: Locator;
+    readonly registerForm: Locator;
+    readonly ordersTab: Locator;
+    readonly downloadsTab: Locator;
 
     constructor(page: Page) {
         this.page = page;

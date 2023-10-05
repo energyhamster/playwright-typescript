@@ -41,16 +41,14 @@ test.describe("Home", () => {
         await expect(homeText).toBeEnabled();
     });
 
-    test("Verify search icon is visible using xpath selector", async ({
-        page,
-    }) => {
+    test("Verify search icon is visible using xpath selector", async () => {
         // Find the text locator
         const searchIcon = homePage.searchIcon;
         // Verify home text is visible
         await expect(searchIcon).toBeVisible();
     });
 
-    test("Verify text of all nav links", async ({ page }) => {
+    test("Verify text of all nav links", async () => {
         const expectedLinksText = [
             "Home",
             "About",
